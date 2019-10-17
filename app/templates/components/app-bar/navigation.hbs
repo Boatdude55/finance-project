@@ -1,0 +1,9 @@
+{{#zf-dropdown-menu}}
+  {{#with (hash
+
+    link-menu=(component "app-bar/navigation/link-menu")
+
+  ) as |appHeaderItems|}}
+    {{yield appHeaderItems}}
+  {{/with}}
+{{/zf-dropdown-menu}}

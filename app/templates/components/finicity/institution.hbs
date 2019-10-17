@@ -1,0 +1,16 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <div class="card">
+    <h3>{{object.name}}</h3>
+    <p>{{object.accountTypeDescription}}</p>
+    <p>{{object.currency}}</p>
+    <div>
+      <h4>Address</h4>
+      <ul>
+        <li>{{object.address.addressLine1}}</li>
+        <li>{{object.address.addressLine2}}</li>
+      </ul>
+    </div>
+  </div>
+{{/if}}

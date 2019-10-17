@@ -1,0 +1,16 @@
+<table>
+  <thead></thead>
+  <tbody>
+    <tr>
+      {{#with (hash
+
+        account=(component "app-bar/account")
+        brand=(component "app-bar/brand")
+        navigation=(component "app-bar/navigation")
+
+      ) as |appBarComponents|}}
+        {{yield appBarComponents}}
+      {{/with}}
+    </tr>
+  </tbody>
+</table>

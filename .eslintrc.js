@@ -16,6 +16,9 @@ module.exports = {
   },
   rules: {
   },
+  globals: {
+    "Masonry": "readonly"
+  },
   overrides: [
     // node files
     {

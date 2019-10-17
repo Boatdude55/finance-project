@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="columns small-12">
+    {{#step-manager as |w|}}
+      {{#w.step name="institution"}}
+        <div class="width-75 float-center">
+          <label>
+            Find your institution
+            <input type="search" placeholder="ex. US Bank" oninput={{perform searchTask value="target.value"}}>
+          </label>
+        </div>
+        <div class="padding-vertical-1">
+          <div class="row small-up-1 medium-up-2 large-up-3">
+            {{#if searchTask.isIdle}}
+              {{#each searchTask.lastSuccessful.value as |institution|}}
+                {{component "finicity/institution" object=institution onSelection=(action "toggleSelection") classNames="column column-block active-border"}}
+              {{else}}
+                <div class="">
+                  No institutions
+                </div>
+              {{/each}}
+            {{else if searchTask.isRunning}}
+              <div class="">
+                <div class="loader">Loading...</div>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+        <div class="clearfix text-center">
+          <button class="button" onclick={{validate-transition w.transition-to-next with=(action "checkSelected")}}>
+            Next Step
+            <i class="fas fa-arrow-right fa-lg"></i>
+          </button>
+        </div>
+      {{/w.step}}
+
+      {{#w.step name="login"}}
+        {{component "finicity/login-form" object=selected}}
+      {{/w.step}}
+
+      {{#w.step name="select"}}
+      {{/w.step}}
+
+      {{#w.step name="verify"}}
+      {{/w.step}}
+
+      {{#w.step name="linking"}}
+      {{/w.step}}
+
+      {{#w.step name="complete"}}
+      {{/w.step}}
+    {{/step-manager}}
+  </div>
+</div>

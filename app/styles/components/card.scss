@@ -1,0 +1,36 @@
+.card {
+  cursor: pointer;
+  margin: 0;
+  &.shadow {
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+  }
+
+  &.create-button {
+    // min-height: 170px;
+    &:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+  }
+  &-section {
+    // position: relative;
+    // .card-icon {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
+  }
+
+  &-image {
+    svg {
+      height: 50px;
+    }
+  }
+}

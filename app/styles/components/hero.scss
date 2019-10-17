@@ -1,0 +1,42 @@
+.hero {
+
+  &-container {
+    height: 65vh;
+    background-size: cover;
+    @media screen and (min-width: 40em) {
+      background-position: center center;
+    }
+
+    &#formalFinanceBanner {
+      background: url('images/formal-hero-banner.jpg') top right;
+    }
+
+    &#casualFinanceBanner {
+      background: url('images/casual-hero-banner.jpg') top right;
+    }
+
+  }
+
+  &-main-container {
+    max-width: $global-width;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    @media screen and (min-width: 40em) {
+      padding-left: 50%;
+    }
+  }
+
+  &-header-wrapper {
+    .hero-header {
+      margin: 0;
+    }
+  }
+
+  &-subheader-wrapper {
+    .hero-subheader {
+
+    }
+  }
+
+}

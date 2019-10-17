@@ -1,0 +1,17 @@
+@mixin scroll-container () {
+  .scroll-container {
+    min-height: 500px;
+  }
+  @media screen and (max-width: 63.9375em) {
+    .scroll-container {
+    }
+  }
+  @media screen and (min-width: 40em) and (max-width:63.9375em) {
+      .column-block.scroll-x {
+      }
+  }
+  @media screen and (max-width: 39.9375em) {
+      .column-block.scroll-x {
+      }
+  }
+}

@@ -1,0 +1,27 @@
+<div>
+  {{#if setup.isIdle}}
+    {{#each setup.lastSuccessful.value as |loginFields|}}
+      {{#each loginFields as |field|}}
+        <div>
+          <label for={{field.name}}>
+            {{field.description}}
+            {{input id=field.name type=(format-input-model field.name)}}
+          </label>
+        </div>
+      {{/each}}
+    {{/each}}
+  {{else if setup.isRunning}}
+    <div>Getting institution sign in</div>
+    <div class="loader">Loading...</div>
+  {{/if}}
+</div>
+<div class="clearfix">
+  <button class="button float-left" onclick={{action w.transition-to-previous}}>
+    <i class="fas fa-arrow-left fa-lg"></i>
+    Previous Step
+  </button>
+  <button class="button float-right" onclick={{validate-transition w.transition-to-next with=(action "submitLogin")}}>
+    Next Step
+    <i class="fas fa-arrow-right fa-lg"></i>
+  </button>
+</div>

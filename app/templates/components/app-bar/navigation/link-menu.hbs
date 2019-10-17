@@ -1,0 +1,14 @@
+{{#link-to linkTo}}
+  {{linkToCaption}}
+{{/link-to}}
+{{#if routes}}
+  <ul class="menu">
+    {{#each routes as |route|}}
+      <li>
+        {{#link-to route.linkTo tagName="li"}}
+          {{route.linkToCaption}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

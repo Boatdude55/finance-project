@@ -20,6 +20,20 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'ember-form-for': {
+      errorsPath: 'error.PROPERTY_NAME.validation',
+      errorsProperty: 'error',
+      buttonClasses: ['form-button'],
+      fieldClasses: ['form-field'],
+      fieldErrorClass: 'form-field--has-errors',
+      errorClasses: ['form-field--errors'],
+      hintClasses: ['form-field--hint'],
+      inputClasses: ['form-field--control'],
+      labelClasses: ['form-field--label'],
+      resetClasses: ['button', 'form-button--reset'],
+      submitClasses: ['button', 'form-button--submit']
     }
   };
 

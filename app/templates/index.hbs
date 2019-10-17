@@ -1,0 +1,18 @@
+{{#app-bar as |ab|}}
+
+  {{ab.brand "brand"}}
+
+  {{#ab.navigation as |nav|}}
+    {{nav.link-menu "index.overview" "overview"}}
+    {{nav.link-menu "index.accounts" "accounts"}}
+    {{nav.link-menu "index.profile" "profile"}}
+  {{/ab.navigation}}
+
+  {{ab.account}}
+
+{{/app-bar}}
+<div class="row">
+  <div class="columns small-12">
+    {{outlet}}
+  </div>
+</div>

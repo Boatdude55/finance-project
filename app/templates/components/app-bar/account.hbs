@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <div>
+    <button {{action invalidate session}}>
+      Sign out
+    </button>
+  </div>
+{{/if}}

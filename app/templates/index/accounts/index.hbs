@@ -1,0 +1,48 @@
+<div class="row small-up-1 medium-up-3 large-up-3">
+  <div class="column column-block">
+    <div class="card create-button">
+      {{#link-to "index.accounts.create" tagName="div" class="card-section text-center" role="button"}}
+        <div class="card-icon">
+          <i class="fas fa-plus" role="img"></i>
+          <div>Add Account</div>
+        </div>
+      {{/link-to}}
+      <div class="card-header">
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+  {{#each this.model as |account|}}
+    <div class="column column-block">
+      <div class="card">
+        <div class="card-section">
+          <div class="card-image text-center">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+              <defs>
+                <style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+              </defs>
+              <title>Black</title>
+              <line class="cls-1" x1="7" y1="39" x2="43" y2="39"/>
+              <line class="cls-1" x1="39" y1="19.22" x2="39" y2="32"/>
+              <line class="cls-1" x1="34" y1="19.22" x2="34" y2="36"/>
+              <line class="cls-1" x1="16" y1="19" x2="16" y2="36"/>
+              <line class="cls-1" x1="11" y1="32" x2="11" y2="19"/>
+              <line class="cls-1" x1="40" y1="36" x2="10" y2="36"/>
+              <path class="cls-1" d="M11,19H41.43a1.05,1.05,0,0,0,.44-2L26,9.25a2.16,2.16,0,0,0-2,0L8.12,17a1.05,1.05,0,0,0,.44,2H11"/>
+              <path class="cls-1" d="M28,35V26a3.19,3.19,0,0,0-3-3h0a3,3,0,0,0-3,3v6"/>
+            </svg>
+          </div>
+          <div>{{account.name}}</div>
+        </div>
+        <div class="card-header">
+          {{#link-to "index.accounts.edit" account tagName="button" class="button"}}
+            Edit
+          {{/link-to}}
+          <button onclick={{action "delete" account}} class="button alert">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
