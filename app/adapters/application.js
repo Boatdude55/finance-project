@@ -8,14 +8,19 @@ export default DS.RESTAdapter.extend({
   namespace: 'app',
 
   session: service(),
+  sessionUser: service(),
 
-  headers: computed('session.isAuthenticated', function() {
+  headers: computed('session.isAuthenticated' , 'sessionUser.user', function() {
 
     let { refreshToken, idToken } = get(this, 'session.data.authenticated.data');
+    let { customerToken } = this.sessionUser.get('user');
+
+    console.log(session.data.authenticated, sessionUser.user);
 
     return {
-      'REFRESH_TOKEN': refreshToken,
-      'ID_TOKEN': idToken,
+      'Refresh-Token': refreshToken,
+      'id-Token': idToken,
+      'App-Token': customerToken,
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     };

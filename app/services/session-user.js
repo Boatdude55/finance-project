@@ -5,7 +5,6 @@ import { isEmpty } from '@ember/utils';
 export default Service.extend({
   session: service(),
   store: service(),
-
   loadCurrentUser() {
 
     return new RSVP.Promise((resolve, reject) => {

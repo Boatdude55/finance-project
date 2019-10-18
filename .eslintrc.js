@@ -17,7 +17,8 @@ module.exports = {
   rules: {
   },
   globals: {
-    "Masonry": "readonly"
+    "Masonry": "readonly",
+    "finicityConnect": "readonly"
   },
   overrides: [
     // node files
